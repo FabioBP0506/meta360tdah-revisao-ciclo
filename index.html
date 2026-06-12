@@ -529,26 +529,38 @@
         </section>
 
         <section class="card">
-          <div class="section-title">2. Pontos que ainda precisam de apoio</div>
-          <div class="field-group">
-            <label for="consolidationText">O que ainda está difícil e vocês gostariam de consolidar daqui para frente? <span class="required">*</span></label>
-            <textarea id="consolidationText" name="consolidation_text" required></textarea>
-            <p class="hint">Podem ser desafios que ainda aparecem na rotina, na escola, no trabalho, na organização, na autonomia, na comunicação ou na adesão às estratégias combinadas.</p>
-          </div>
-
+          <div class="section-title">Experiência com o META360TDAH</div>
           <fieldset>
-            <legend>Hoje, como vocês enxergam a necessidade de continuidade? <span class="required">*</span></legend>
+            <legend>O que mais ajudou sua família durante este ciclo do META360TDAH? <span class="required">*</span></legend>
             <div class="choice-grid">
-              <label class="choice"><input type="radio" name="continuity_perception" value="Temos clareza do que ainda precisa ser consolidado" required><span>Temos clareza do que ainda precisa ser consolidado</span></label>
-              <label class="choice"><input type="radio" name="continuity_perception" value="Sabemos que ainda existem dificuldades, mas precisamos organizar melhor as prioridades"><span>Sabemos que ainda existem dificuldades, mas precisamos organizar melhor as prioridades</span></label>
-              <label class="choice"><input type="radio" name="continuity_perception" value="Estamos em dúvida se faz sentido continuar"><span>Estamos em dúvida se faz sentido continuar</span></label>
-              <label class="choice"><input type="radio" name="continuity_perception" value="Neste momento, não sabemos se a continuidade é necessária"><span>Neste momento, não sabemos se a continuidade é necessária</span></label>
+              <label class="choice"><input type="checkbox" name="meta360_helpful_items" value="Orientações da equipe"><span>Orientações da equipe</span></label>
+              <label class="choice"><input type="checkbox" name="meta360_helpful_items" value="Estratégias para a rotina"><span>Estratégias para a rotina</span></label>
+              <label class="choice"><input type="checkbox" name="meta360_helpful_items" value="Entendimento sobre o TDAH"><span>Entendimento sobre o TDAH</span></label>
+              <label class="choice"><input type="checkbox" name="meta360_helpful_items" value="Apoio à família"><span>Apoio à família</span></label>
+              <label class="choice"><input type="checkbox" name="meta360_helpful_items" value="Organização e planejamento"><span>Organização e planejamento</span></label>
+              <label class="choice"><input type="checkbox" name="meta360_helpful_items" value="Acompanhamentos realizados"><span>Acompanhamentos realizados</span></label>
+              <label class="choice"><input id="meta360HelpfulOtherCheck" type="checkbox" name="meta360_helpful_items" value="Outro"><span>Outro</span></label>
             </div>
           </fieldset>
+
+          <div class="field-group hidden" id="meta360HelpfulOtherWrap">
+            <label for="meta360HelpfulOther">Descreva brevemente <span class="required">*</span></label>
+            <input id="meta360HelpfulOther" name="meta360_helpful_other" type="text" autocomplete="off">
+          </div>
+
+          <div class="field-group">
+            <label for="withoutSupportText">O que você acredita que não teria conseguido sozinho sem o apoio do META360TDAH? <span class="required">*</span></label>
+            <textarea id="withoutSupportText" name="without_support_text" required></textarea>
+          </div>
+
+          <div class="field-group">
+            <label for="mainBenefitText">Qual foi o principal benefício que o META360TDAH trouxe para sua família até aqui? <span class="required">*</span></label>
+            <textarea id="mainBenefitText" name="main_benefit_text" required></textarea>
+          </div>
         </section>
 
         <section class="card">
-          <div class="section-title">3. Percepção sobre o acompanhamento</div>
+          <div class="section-title">2. Percepção sobre o acompanhamento</div>
           <fieldset>
             <legend>De 0 a 10, quanto vocês sentem que o acompanhamento ajudou até aqui? <span class="required">*</span></legend>
             <div class="scale-grid" aria-label="Nota de 0 a 10">
@@ -565,6 +577,30 @@
               <label class="scale-choice"><input type="radio" name="perceived_value_score" value="10"><span>10</span></label>
             </div>
             <p class="hint">Essa nota nos ajuda a entender a percepção de valor da família e preparar melhor a conversa de devolutiva.</p>
+          </fieldset>
+        </section>
+
+        <section class="card">
+          <div class="section-title">3. Pontos que ainda precisam de apoio</div>
+          <div class="field-group">
+            <label for="consolidationText">O que ainda está difícil e vocês gostariam de consolidar daqui para frente? <span class="required">*</span></label>
+            <textarea id="consolidationText" name="consolidation_text" required></textarea>
+            <p class="hint">Podem ser desafios que ainda aparecem na rotina, na escola, no trabalho, na organização, na autonomia, na comunicação ou na adesão às estratégias combinadas.</p>
+          </div>
+
+          <div class="field-group">
+            <label for="ifEndedTodayLossText">Se o acompanhamento fosse encerrado hoje, o que vocês sentiriam que perderiam? <span class="required">*</span></label>
+            <textarea id="ifEndedTodayLossText" name="if_ended_today_loss_text" required></textarea>
+          </div>
+
+          <fieldset>
+            <legend>Hoje, como vocês enxergam a necessidade de continuidade? <span class="required">*</span></legend>
+            <div class="choice-grid">
+              <label class="choice"><input type="radio" name="continuity_perception" value="Temos clareza do que ainda precisa ser consolidado" required><span>Temos clareza do que ainda precisa ser consolidado</span></label>
+              <label class="choice"><input type="radio" name="continuity_perception" value="Sabemos que ainda existem dificuldades, mas precisamos organizar melhor as prioridades"><span>Sabemos que ainda existem dificuldades, mas precisamos organizar melhor as prioridades</span></label>
+              <label class="choice"><input type="radio" name="continuity_perception" value="Estamos em dúvida se faz sentido continuar"><span>Estamos em dúvida se faz sentido continuar</span></label>
+              <label class="choice"><input type="radio" name="continuity_perception" value="Neste momento, não sabemos se a continuidade é necessária"><span>Neste momento, não sabemos se a continuidade é necessária</span></label>
+            </div>
           </fieldset>
         </section>
 
@@ -624,10 +660,17 @@
     const successCard = document.getElementById("successCard");
     const respondentOtherWrap = document.getElementById("respondentOtherWrap");
     const respondentOther = document.getElementById("respondentOther");
+    const meta360HelpfulOtherCheck = document.getElementById("meta360HelpfulOtherCheck");
+    const meta360HelpfulOtherWrap = document.getElementById("meta360HelpfulOtherWrap");
+    const meta360HelpfulOther = document.getElementById("meta360HelpfulOther");
 
     function checkedValue(name) {
       const field = form.querySelector(`input[name="${name}"]:checked`);
       return field ? field.value : "";
+    }
+
+    function checkedValues(name) {
+      return Array.from(form.querySelectorAll(`input[name="${name}"]:checked`)).map((field) => field.value);
     }
 
     function getPayload() {
@@ -637,9 +680,14 @@
         respondent_other: respondentOther.value.trim(),
         perceived_changes_text: document.getElementById("perceivedChangesText").value.trim(),
         perceived_changes_classification: checkedValue("perceived_changes_classification"),
-        consolidation_text: document.getElementById("consolidationText").value.trim(),
-        continuity_perception: checkedValue("continuity_perception"),
+        meta360_helpful_items: checkedValues("meta360_helpful_items"),
+        meta360_helpful_other: meta360HelpfulOther.value.trim(),
+        without_support_text: document.getElementById("withoutSupportText").value.trim(),
+        main_benefit_text: document.getElementById("mainBenefitText").value.trim(),
         perceived_value_score: checkedValue("perceived_value_score"),
+        consolidation_text: document.getElementById("consolidationText").value.trim(),
+        if_ended_today_loss_text: document.getElementById("ifEndedTodayLossText").value.trim(),
+        continuity_perception: checkedValue("continuity_perception"),
         additional_comments: document.getElementById("additionalComments").value.trim(),
         consent_confirmed: document.getElementById("consentConfirmed").checked,
         submitted_at: new Date().toISOString()
@@ -659,6 +707,8 @@
     function validateReview() {
       if (!form.checkValidity()) return false;
       if (checkedValue("respondent_type") === "Outro" && !respondentOther.value.trim()) return false;
+      if (!checkedValues("meta360_helpful_items").length) return false;
+      if (meta360HelpfulOtherCheck.checked && !meta360HelpfulOther.value.trim()) return false;
       return true;
     }
 
@@ -692,6 +742,13 @@
         respondentOther.required = isOther;
         if (!isOther) respondentOther.value = "";
       }
+
+      if (event.target.name === "meta360_helpful_items") {
+        const isOther = meta360HelpfulOtherCheck.checked;
+        meta360HelpfulOtherWrap.classList.toggle("hidden", !isOther);
+        meta360HelpfulOther.required = isOther;
+        if (!isOther) meta360HelpfulOther.value = "";
+      }
     });
 
     form.addEventListener("submit", async (event) => {
@@ -715,6 +772,8 @@
         form.reset();
         respondentOtherWrap.classList.add("hidden");
         respondentOther.required = false;
+        meta360HelpfulOtherWrap.classList.add("hidden");
+        meta360HelpfulOther.required = false;
         successCard.focus();
       } catch (error) {
         showError("Não foi possível enviar. Confira a conexão ou o endpoint do Formspree.");
@@ -730,6 +789,8 @@
       successCard.classList.remove("show");
       respondentOtherWrap.classList.add("hidden");
       respondentOther.required = false;
+      meta360HelpfulOtherWrap.classList.add("hidden");
+      meta360HelpfulOther.required = false;
     });
   </script>
 </body>
