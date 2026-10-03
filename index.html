@@ -480,7 +480,13 @@
     </header>
 
     <section class="layout">
-      <form id="reviewForm" class="stack" action="https://formspree.io/f/mnjregbk" method="POST" accept-charset="UTF-8" novalidate>
+      <form id="reviewForm" class="stack" name="revisao-ciclo" action="/" method="POST" data-netlify="true" netlify-honeypot="bot-field" accept-charset="UTF-8" novalidate>
+        <input type="hidden" name="form-name" value="revisao-ciclo">
+        <p hidden><label>Não preencha este campo: <input name="bot-field"></label></p>
+        <input type="hidden" name="subject" value="Revisão de Ciclo META360TDAH">
+        <input type="hidden" name="nps_category" value="">
+        <input type="hidden" name="submitted_at" value="">
+        <input type="hidden" name="submitted_month" value="">
         <section class="card privacy">
 
           <label class="choice" for="consentConfirmed">
@@ -736,7 +742,7 @@
     // Antes de enviar para famílias, confirme quem tem acesso aos dados,
     // por quanto tempo eles serão armazenados e se o fluxo está adequado
     // às políticas de privacidade e consentimento da operação.
-    const FORM_ENDPOINT = "https://formspree.io/f/mnjregbk";
+    const FORM_ENDPOINT = "/";
 
     const form = document.getElementById("reviewForm");
     const errorBox = document.getElementById("errorBox");
@@ -833,13 +839,25 @@
         return { ok: true };
       }
 
+      const body = new URLSearchParams();
+      body.append("form-name", "revisao-ciclo");
+      Object.keys(payload).forEach((key) => {
+        const value = payload[key];
+        if (key === "_subject") {
+          body.append("subject", value);
+        } else if (Array.isArray(value)) {
+          value.forEach((item) => body.append(key, item));
+        } else if (typeof value === "boolean") {
+          body.append(key, value ? "yes" : "no");
+        } else {
+          body.append(key, value);
+        }
+      });
+
       return fetch(FORM_ENDPOINT, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json"
-        },
-        body: JSON.stringify(payload)
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: body.toString()
       });
     }
 
